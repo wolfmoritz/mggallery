@@ -1,7 +1,7 @@
 /**
  *	jQuery MG Gallery Plugin
  *
- *	Version 1.3.1
+ *	Version 1.3.2
  *
  * Copyright (c) 2011 - 2013 Wolfgang Moritz (http://www.wolfmoritz.com)
  * Licensed under the MIT License:
@@ -53,11 +53,11 @@
 			currentHtml += '<div class="' + config.currentImageDivClass.replace('.','') + '"><img src="" /></div>';
 			currentHtml += '<div class="' + config.currentTitleDivClass.replace('.','') + '"></div>';
 			currentHtml += '<div class="' + config.currentMetaDivClass.replace('.','') + '"></div></div>';
-			$('div' + config.mainImageDivContainerId).html(currentHtml).prepend('<div class="slideShowControls" />');
+			$(config.mainImageDivContainerId).html(currentHtml).prepend('<div class="slideShowControls" />');
 
 			// If the slide show has been enabled, then append slide show controls
 			if(config.slideShowInterval > 0) {
-				$('div.slideShowControls').html('<span class="pause" title="' + config.slideShowPauseTitle + '">' + config.slideShowPause + '</span><span class="play" title="' + config.slideShowPlayTitle + '">' + config.slideShowPlay + '</span>');
+				$('.slideShowControls').html('<span class="pause" title="' + config.slideShowPauseTitle + '">' + config.slideShowPause + '</span><span class="play" title="' + config.slideShowPlayTitle + '">' + config.slideShowPlay + '</span>');
 			};
 		},
 
@@ -67,7 +67,7 @@
 			var $newImg = $(newImage);
 			var newSrc = $newImg.children('a').attr('href');
 			var newTitle = $newImg.children('a').attr('title');
-			var newMeta = $newImg.children('div' + config.thumbnailMetaDivClass).html();
+			var newMeta = $newImg.children(config.thumbnailMetaDivClass).html();
 
 			// Set prior and current indexes
 			config.gallery.priorIndex = config.gallery.currentIndex;
@@ -82,27 +82,27 @@
 			};
 
 			// Cache the div element to load
-			$next = $('div' + config.mainImageDivContainerId + '>div.next');
+			$next = $(config.mainImageDivContainerId + '>.next');
 
 			// New image source
-			$next.children('div' + config.currentImageDivClass).children('img').load(function() {
+			$next.children(config.currentImageDivClass).children('img').load(function() {
 				// Don't display Current Image Title if empty.
 				if( ! $.trim(newTitle)) {
-					$next.children('div' + config.currentTitleDivClass).hide();
+					$next.children(config.currentTitleDivClass).hide();
 				} else {
-					$next.children('div' + config.currentTitleDivClass).html(newTitle).show();
+					$next.children(config.currentTitleDivClass).html(newTitle).show();
 				};
 
 				// Don't display Current Image Meta if empty.
 				if( ! $.trim(newMeta)) {
-					$next.children('div' + config.currentMetaDivClass).hide();
+					$next.children(config.currentMetaDivClass).hide();
 				} else {
-					$next.children('div' + config.currentMetaDivClass).html(newMeta).show();
+					$next.children(config.currentMetaDivClass).html(newMeta).show();
 				};
 			}).attr('src',newSrc);
 
 			// Swap ".currentThumb" class on thumbnails
-			$('li' + config.thumbnailCurrentItemClass).removeClass(config.thumbnailCurrentItemClass.replace('.',''));
+			$(config.thumbnailCurrentItemClass).removeClass(config.thumbnailCurrentItemClass.replace('.',''));
 			$newImg.addClass(config.thumbnailCurrentItemClass.replace('.',''));
 		},
 
@@ -132,8 +132,8 @@
 
 		// Swap images sequentially
 		swapImage: function (newImage) {
-			$('div' + config.mainImageDivContainerId).find(':animated').stop(true,true);
-			$current = $('div' + config.mainImageDivContainerId + '>div.current').toggleClass('current next');
+			$(config.mainImageDivContainerId).find(':animated').stop(true,true);
+			$current = $(config.mainImageDivContainerId + '>.current').toggleClass('current next');
 			$current.animate({opacity: 0}, config.animationSpeed, function(){
 				$.fn.mggallery.methods.loadImage(newImage);
 				$.fn.mggallery.methods.fadeThumb('li[data-img_id="' + config.gallery.priorIndex + '"]', config.thumbDefaultOpacity);
@@ -148,9 +148,9 @@
 
 		// Crossfade images
 		crossfadeImage: function (newImage) {
-			$('div' + config.mainImageDivContainerId).find(':animated').stop(true,true);
-			$current = $('div' + config.mainImageDivContainerId + '>div.current');
-			$current.clone().css('opacity',0).toggleClass('current next').appendTo('div' + config.mainImageDivContainerId);
+			$(config.mainImageDivContainerId).find(':animated').stop(true,true);
+			$current = $(config.mainImageDivContainerId + '>.current');
+			$current.clone().css('opacity',0).toggleClass('current next').appendTo(config.mainImageDivContainerId);
 			$.fn.mggallery.methods.loadImage(newImage);
 			$.fn.mggallery.methods.fadeThumb('li[data-img_id="' + config.gallery.priorIndex + '"]', config.thumbDefaultOpacity);
 			if(config.gallery.thumbnailPagePriorIndex !== config.gallery.thumbnailPageIndex) {
@@ -160,7 +160,7 @@
 			$current.animate({opacity: 0}, config.animationSpeed, function() {
 				$(this).remove();
 			});
-			$('div' + config.mainImageDivContainerId + '>div.next').animate({opacity: 1}, config.animationSpeed, function() {
+			$(config.mainImageDivContainerId + '>.next').animate({opacity: 1}, config.animationSpeed, function() {
 				$(this).toggleClass('next current');
 			});
 		},
@@ -201,18 +201,18 @@
 				controls = first + prev + next + last;
 			};
 
-			$('div.thumbPageControls').html(controls);
+			$('.thumbPageControls').html(controls);
 		},
 
 		// Swap out thumbnail page
 		swapThumbPage: function() {
 			// Fade out the current thumbnail page
-			$('div#thumbPage_' + config.gallery.thumbnailPagePriorIndex).add('div.thumbPageControls').fadeOut(config.animationSpeed, function() {
+			$('#thumbPage_' + config.gallery.thumbnailPagePriorIndex).add('.thumbPageControls').fadeOut(config.animationSpeed, function() {
 				// Update the page controls
 				$.fn.mggallery.methods.initThumbPageControls();
 
 				// Now fade in the new thumnail page
-				$('div#thumbPage_' + config.gallery.thumbnailPageIndex).add('div.thumbPageControls').fadeIn(config.animationSpeed);
+				$('#thumbPage_' + config.gallery.thumbnailPageIndex).add('.thumbPageControls').fadeIn(config.animationSpeed);
 			});
 		},
 
@@ -281,7 +281,7 @@
 			});
 
 			// Event: Load clicked thumbnail
-			$galleryThumbnails.delegate('li.thumbItem','click',function(e) {
+			$galleryThumbnails.delegate('.thumbItem','click',function(e) {
 				e.preventDefault();
 
 				// No sense to change anything if this is the current image
@@ -320,16 +320,16 @@
 				};
 				$.fn.mggallery.methods.swapThumbPage();
 
-				$.fn.mggallery.methods.exchangeImage('div#thumbPage_' + config.gallery.thumbnailPageIndex + '>li.thumbItem:first');
+				$.fn.mggallery.methods.exchangeImage('#thumbPage_' + config.gallery.thumbnailPageIndex + '>.thumbItem:first');
 			});
 
 			// Hide all thumbnail image meta divs, we don't want to see them with the thumbs.
-			$thumbs.find('div' + config.thumbnailMetaDivClass).hide();
+			$thumbs.find(config.thumbnailMetaDivClass).hide();
 
 			// We're now ready to raise the curtain. Show #galleryThumbnails if hidden, set the initial opacity and fade in the thumbnail list.
 			$thumbs.children('a').children('img').css('opacity', 0);
-			$galleryThumbnails.show().find('div#thumbPage_' + config.gallery.thumbnailPageIndex).show();
-			$('div' + config.mainImageDivContainerId + '>div.next').animate({opacity: 1}, config.animationSpeed).toggleClass('next current');
+			$galleryThumbnails.show().find('#thumbPage_' + config.gallery.thumbnailPageIndex).show();
+			$(config.mainImageDivContainerId + '>.next').animate({opacity: 1}, config.animationSpeed).toggleClass('next current');
 			$thumbs.each(function(i) {
 				$.fn.mggallery.methods.fadeThumb(this, config.thumbDefaultOpacity)
 			});
@@ -338,20 +338,20 @@
 			if(config.slideShowInterval > 0) {
 				if(config.slideShowAutoStart) {
 					$.fn.mggallery.methods.startSlideShow();
-					$('div.slideShowControls span.play').hide().siblings('span.pause').show();
+					$('.slideShowControls .play').hide().siblings('.pause').show();
 				} else {
-					$('div.slideShowControls span.pause').hide().siblings('span.play').show();
+					$('.slideShowControls .pause').hide().siblings('.play').show();
 				};
 
 				// Handle slide show controls
-				$('div.slideShowControls').delegate('span','click',function(e) {
+				$('.slideShowControls').delegate('span','click',function(e) {
 					var request = $(this).attr('class');
 					if(request === 'play' && config.gallery.slideShowIntervalId === 0) {
 						$.fn.mggallery.methods.startSlideShow();
-						$(this).hide().siblings('span.pause').show();
+						$(this).hide().siblings('.pause').show();
 					} else if (request === 'pause' && config.gallery.slideShowIntervalId !== 0) {
 						$.fn.mggallery.methods.stopSlideShow();
-						$(this).hide().siblings('span.play').show();
+						$(this).hide().siblings('.play').show();
 					};
 				});
 			};
