@@ -1,11 +1,12 @@
 /**
  *	jQuery MG Gallery Plugin
+ *	https://github.com/wolfmoritz/mggallery
  *
  *	Version 1.3.2
  *
  * Copyright (c) 2011 - 2013 Wolfgang Moritz (http://www.wolfmoritz.com)
  * Licensed under the MIT License:
- *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.opensource.org/licenses/MIT
  */
 ;(function($) {
 
