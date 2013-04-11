@@ -1,0 +1,3 @@
+*.sublime*
+.svn*
+.DS_Store
