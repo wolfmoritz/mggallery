@@ -400,6 +400,7 @@
 		slideShowPauseTitle:		'Pause Slideshow',	// Use for alternate title text for slideshow navigation controls.
 		slideShowAutoStart:			false,				// Whether to start the slide show on page load, or let the user choose to activate.
 		enableDeepLinks:			true,				// Appends hash to URL for the current image to allow direct links.
-		enableBackButton:			true				// Allows users to browse prior images using the back button. Only works if enableDeepLinks is true.
+		enableBackButton:			true,				// Allows users to browse prior images using the back button. Only works if enableDeepLinks is true.
+		excludesClass: '.mg-exclude' // List items with this class are not selected by the plugin
 	};
 })(jQuery);
