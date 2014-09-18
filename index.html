@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="google-site-verification" content="ilKpSg25DPmF-rOHwP9c-3cbA408Y_Z_2or2NhPm4l4" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="google-site-verification" content="ilKpSg25DPmF-rOHwP9c-3cbA408Y_Z_2or2NhPm4l4">
 	<title>MG Gallery jQuery Plugin Documentation</title>
 
 	<style type="text/css">
@@ -134,10 +134,10 @@
 		<h3>Load The Files</h3>
 		<p>In your page header, reference jQuery 1.7.0+ (supplied with the download) or link to <a href="https://developers.google.com/speed/libraries/devguide">Google's jQuery API</a> (a better option). Also reference the MG Gallery plugin file, either the regular <var>jquery.mggallery.js</var> or the minfied <var>jquery.mggallery.min.js</var>. Don't forget the MG Gallery stylesheet, <var>mggallery.css</var>.</p>
 		<code>
-			&lt;head&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;link type="text/css" rel="stylesheet" href="css/mggallery.css" /&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery-1.7.1.min.js"&gt;&lt;/script&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery.mggallery.js"&gt;&lt;/script&gt;<br/>
+			&lt;head&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;link type="text/css" rel="stylesheet" href="css/mggallery.css" /&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery-1.7.1.min.js"&gt;&lt;/script&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery.mggallery.js"&gt;&lt;/script&gt;<br>
 			&lt;/head&gt;
 		</code>
 
@@ -148,16 +148,16 @@
 			<li>An empty div where the main (large) image, title and caption will appear.</li>
 		</ul>
 		<code>
-			&lt;div id="galleryThumbnails"&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="path_to_full_sized_image.ext" title="Your Image Title"&gt;&lt;img src="path_to_thumbnail_image.ext" /&gt;&lt;/a&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="thumbnailMeta"&gt;Optional div: Any text or HTML you want to appear under the image.&lt;/div&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br/>
-			&lt;/div&gt;&lt;!-- End #galleryThumbnails --&gt;<br/><br/>
+			&lt;div id="galleryThumbnails"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="path_to_full_sized_image.ext" title="Your Image Title"&gt;&lt;img src="path_to_thumbnail_image.ext" /&gt;&lt;/a&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="thumbnailMeta"&gt;Optional div: Any text or HTML you want to appear under the image.&lt;/div&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+			&lt;/div&gt;&lt;!-- End #galleryThumbnails --&gt;<br><br>
 
-			&lt;div id="galleryMainContainer"&gt;&lt;/div&gt;&lt;!-- End #galleryMainContainer --&gt;<br/>
+			&lt;div id="galleryMainContainer"&gt;&lt;/div&gt;&lt;!-- End #galleryMainContainer --&gt;<br>
 		</code>
 		<p>Notes:</p>
 		<ul>
@@ -172,11 +172,11 @@
 		<h3>Initialize the Gallery</h3>
 		<p>In your header, reference the MG Gallery plugin <dfn>$('div#galleryThumbnails').mggallery();</dfn> inside of the standard jQuery ready handler.</p>
 		<code>
-			&lt;script type="text/javascript"&gt;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function () {<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery();<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
-			&lt;/script&gt;<br/>
+			&lt;script type="text/javascript"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function () {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery();<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+			&lt;/script&gt;<br>
 		</code>
 		<p>That's it!</p>
 
@@ -277,13 +277,13 @@
 
 		<p>And a complete example of the header JavaScript with custom options.</p>
 		<code>
-$(document).ready(function () {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;// Here, we pass in a few options. Only pass in the options you wish to change.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery({<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animationSpeed: 500,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchangeType: 'swap',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thumbDefaultOpacity: .25<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+$(document).ready(function () {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// Here, we pass in a few options. Only pass in the options you wish to change.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animationSpeed: 500,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchangeType: 'swap',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thumbDefaultOpacity: .25<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
 });
 		</code>
 		<p>Remember, the last custom option does not have an ending comma!</p>

@@ -28,7 +28,7 @@ The MG Gallery jQuery Plugin is a full featured image gallery that includes:
 In your page header, reference jQuery 1.7.0+ (supplied with the download) or link to Google's jQuery API (a better option). Also reference the MG Gallery plugin file, either the regular jquery.mggallery.js or the minfied jquery.mggallery.min.js. Don't forget the MG Gallery stylesheet, mggallery.css.
 ```
 <head>
-    <link type="text/css" rel="stylesheet" href="css/mggallery.css" />
+    <link type="text/css" rel="stylesheet" href="css/mggallery.css">
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.mggallery.js"></script>
 </head>
@@ -44,7 +44,7 @@ For the thumbnail gallery, the plugin expects:
 <div id="galleryThumbnails">
     <ul>
         <li>
-            <a href="path_to_full_sized_image.ext" title="Your Image Title"><img src="path_to_thumbnail_image.ext" /></a>
+            <a href="path_to_full_sized_image.ext" title="Your Image Title"><img src="path_to_thumbnail_image.ext"></a>
             <div class="thumbnailMeta">Optional div: Any text or HTML you want to appear under the image.</div>
         </li>
     </ul>
@@ -92,18 +92,18 @@ animationSpeed | `1000` | The animation speed for the main image transition and 
 exchangeType | `crossfade` | Options include 'crossfade' or 'swap'.
 thumbDefaultOpacity | `.5` | Sets the thumbnail opacity on page load. Accepts between 0 (can't see it) to 1 (normal display).
 thumbPageLimit | `8` | Number of thumbnails to display at a time before adding thumbnail pagination.
-thumbNavFirst | `&#171;` | («) Go to "First" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+thumbNavFirst | `&#171;` | («) Go to "First" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 thumbNavFirstTitle | `First` | Use for alternate title text for thumbPage navigation controls.
-thumbNavPrev | `&lt;` | (<) Go to "Previous" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+thumbNavPrev | `&lt;` | (<) Go to "Previous" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 thumbNavPrevTitle | `Previous` | Use for alternate title text for thumbPage navigation controls.
-thumbNavNext | `&gt;` | (>) Go to "Next" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+thumbNavNext | `&gt;` | (>) Go to "Next" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 thumbNavNextTitle | `Next` | Use for alternate title text for thumbPage navigation controls.
-thumbNavLast | `&#187` | (») Go to "Last" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+thumbNavLast | `&#187` | (») Go to "Last" thumbnail pagination set label. You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 thumbNavLastTitle| `Last` | Use for alternate title text for thumbPage navigation controls.
 slideShowInterval| `3000` | Slide show interval in milliseconds. Set to 0 to disable the slide show and controls.
-slideShowPlay| `Play` | "Play" slide show label.You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+slideShowPlay| `Play` | "Play" slide show label.You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 slideShowPlayTitle| `Play` | Slideshow Use for alternate title text for slideshow navigation controls.
-slideShowPause | `Pause` | "Pause" slide show label.You can also pass in an image tag as `'<img src="path/image.ext" />'`, or enter `'&nbsp;'` and use CSS for the image.
+slideShowPause | `Pause` | "Pause" slide show label.You can also pass in an image tag as `'<img src="path/image.ext">'`, or enter `'&nbsp;'` and use CSS for the image.
 slideShowPauseTitle| `Pause` |Slideshow Use for alternate title text for slideshow navigation controls.
 slideShowAutoStart | `false` | Whether to start the slide show on page load, or let the user choose to activate.
 enableDeepLinks | `true` | Appends hash to URL for the current image to allow direct links.

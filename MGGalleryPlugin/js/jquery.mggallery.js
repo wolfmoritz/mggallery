@@ -51,10 +51,10 @@
 		// Append main image, title, meta containers to mainImageDivContainerId after page load, and prepend slideShowControls div.
 		initGalleryContainer: function() {
 			var currentHtml = '<div class="next" style="opacity: 0;">';
-			currentHtml += '<div class="' + config.currentImageDivClass.replace('.','') + '"><img src="" /></div>';
+			currentHtml += '<div class="' + config.currentImageDivClass.replace('.','') + '"><img src=""></div>';
 			currentHtml += '<div class="' + config.currentTitleDivClass.replace('.','') + '"></div>';
 			currentHtml += '<div class="' + config.currentMetaDivClass.replace('.','') + '"></div></div>';
-			$(config.mainImageDivContainerId).html(currentHtml).prepend('<div class="slideShowControls" />');
+			$(config.mainImageDivContainerId).html(currentHtml).prepend('<div class="slideShowControls">');
 
 			// If the slide show has been enabled, then append slide show controls
 			if(config.slideShowInterval > 0) {
@@ -242,8 +242,8 @@
 			});
 
 			// Add the thumbnail page controls div if we need it or not (for consistent layout), and create the main image container
-			$galleryThumbnails.prepend('<div class="thumbPageControls" />');
-			$galleryThumbnails.children('ul').append('<div class="clear" />');
+			$galleryThumbnails.prepend('<div class="thumbPageControls">');
+			$galleryThumbnails.children('ul').append('<div class="clear">');
 			$.fn.mggallery.methods.initGalleryContainer();
 
 			// Loop through all thumbnails, slicing into sets based on thumbPageLimit.
@@ -385,18 +385,18 @@
 		exchangeType:				'crossfade', 		// Option includes 'crossfade' or 'swap'.
 		thumbDefaultOpacity:		0.5, 				// Any number between 0 (invisible) and 1 (visible).
 		thumbPageLimit:				8,					// Number of thumbnails to display at a time.
-		thumbNavFirst:				' &#171; ',			// "First" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		thumbNavFirst:				' &#171; ',			// "First" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		thumbNavFirstTitle:			'First',			// Use for alternate title text for thumbPage navigation controls.
-		thumbNavPrev:				' &lt; ',			// "Previous" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		thumbNavPrev:				' &lt; ',			// "Previous" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		thumbNavPrevTitle:			'Previous',			// Use for alternate title text for thumbPage navigation controls.
-		thumbNavNext:				' &gt; ',			// "Next" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		thumbNavNext:				' &gt; ',			// "Next" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		thumbNavNextTitle:			'Next',				// Use for alternate title text for thumbPage navigation controls.
-		thumbNavLast:				' &#187; ',			// "Last" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		thumbNavLast:				' &#187; ',			// "Last" thumbnail pagination set label. You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		thumbNavLastTitle:			'Last',				// Use for alternate title text for thumbPage navigation controls.
 		slideShowInterval:			3000,				// Slide show interval in milliseconds. Set to 0 to disable the slide show and controls.
-		slideShowPlay:				' Play ',			// "Play" slide show label.You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		slideShowPlay:				' Play ',			// "Play" slide show label.You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		slideShowPlayTitle:			'Play Slideshow',	// Use for alternate title text for slideshow navigation controls.
-		slideShowPause:				' Pause ',			// "Pause" slide show label.You can also pass in an image tag as '<img src="path/image.ext" />', or enter '&nbsp;' and use CSS for the image.
+		slideShowPause:				' Pause ',			// "Pause" slide show label.You can also pass in an image tag as '<img src="path/image.ext">', or enter '&nbsp;' and use CSS for the image.
 		slideShowPauseTitle:		'Pause Slideshow',	// Use for alternate title text for slideshow navigation controls.
 		slideShowAutoStart:			false,				// Whether to start the slide show on page load, or let the user choose to activate.
 		enableDeepLinks:			true,				// Appends hash to URL for the current image to allow direct links.
