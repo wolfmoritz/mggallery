@@ -170,11 +170,11 @@
 		</ul>
 
 		<h3>Initialize the Gallery</h3>
-		<p>In your header, reference the MG Gallery plugin <dfn>$('div#galleryThumbnails').mggallery();</dfn> inside of the standard jQuery ready handler.</p>
+		<p>In your header, reference the MG Gallery plugin <dfn>$('#galleryThumbnails').mggallery();</dfn> inside of the standard jQuery ready handler.</p>
 		<code>
 			&lt;script type="text/javascript"&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function () {<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery();<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#galleryThumbnails').mggallery();<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;});<br>
 			&lt;/script&gt;<br>
 		</code>
@@ -279,7 +279,7 @@
 		<code>
 $(document).ready(function () {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;// Here, we pass in a few options. Only pass in the options you wish to change.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;$('div#galleryThumbnails').mggallery({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$('#galleryThumbnails').mggallery({<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animationSpeed: 500,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchangeType: 'swap',<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thumbDefaultOpacity: .25<br>

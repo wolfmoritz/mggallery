@@ -15,7 +15,7 @@
 		// Standard jQuery ready handler.
 		$(document).ready(function () {
 			// Accepting the defaults except for button controls, this is all it takes to invoke the MG Gallery.
-			$('div#galleryThumbnails').mggallery({
+			$('#galleryThumbnails').mggallery({
 				animationSpeed: 500,
 				exchangeType: 'swap',
 				thumbDefaultOpacity: .25,
@@ -73,16 +73,16 @@
 			text-align: center;
 		}
 		/* -- These CSS attributes override the external mggallery.css style sheet. You might want to edit the external style sheet and change or include these elements as needed. */
-		div#galleryMaincontainer {
+		#galleryMaincontainer {
 			width: 950px;
 		}
-		div#galleryThumbnails {
+		#galleryThumbnails {
 			margin-bottom: 25px;
 		}
-		div#galleryThumbnails, div#galleryThumbnails ul div.centerThumbs {
+		#galleryThumbnails, #galleryThumbnails ul div.centerThumbs {
 			width: 950px;
 		}
-		div#galleryMainContainer {
+		#galleryMainContainer {
 			margin: 0 130px;
 		}
 	</style>
