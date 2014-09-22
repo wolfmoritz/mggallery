@@ -25,13 +25,15 @@ The MG Gallery jQuery Plugin is a full featured image gallery that includes:
 ## How to Use MG Gallery
 
 ### Load The Files
-In your page header, reference jQuery 1.7.0+ (supplied with the download) or link to Google's jQuery API (a better option). Also reference the MG Gallery plugin file, either the regular jquery.mggallery.js or the minfied jquery.mggallery.min.js. Don't forget the MG Gallery stylesheet, mggallery.css.
+In your page header link to the MG Gallery CSS file. In your page footer reference jQuery 1.7.0+ (supplied with the download) or link to Google's jQuery API (a better option). Also reference the MG Gallery plugin file in the footer, either the regular jquery.mggallery.js or the minfied jquery.mggallery.min.js.
 ```
 <head>
     <link type="text/css" rel="stylesheet" href="css/mggallery.css">
+</head>
+
+<!-- In your footer -->
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.mggallery.js"></script>
-</head>
 ```
 
 ### Define Page Elements
@@ -64,12 +66,10 @@ Notes:
 
 
 ### Initialize the Gallery
-In your header, reference the MG Gallery plugin `$('#galleryThumbnails').mggallery();` inside of the standard jQuery ready handler.
+In your footer below the jQuery and MG Gallery scipts, reference the MG Gallery plugin `$('#galleryThumbnails').mggallery();`.
 ```
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#galleryThumbnails').mggallery();
-    });
+    $('#galleryThumbnails').mggallery();
 </script>
 ```
 That's it!
@@ -121,13 +121,11 @@ If you want to change one or more options, you don't need to specify all options
 And a complete example JavaScript with custom options.
 
 ```
-$(document).ready(function () {
-    // Here, we pass in a few options. Only pass in the options you wish to change.
-    $('#galleryThumbnails').mggallery({
-        animationSpeed: 500,
-        exchangeType: 'swap',
-        thumbDefaultOpacity: .25
-    });
+// Here, we pass in a few options. Only pass in the options you wish to change.
+$('#galleryThumbnails').mggallery({
+    animationSpeed: 500,
+    exchangeType: 'swap',
+    thumbDefaultOpacity: .25
 });
 ```
 
