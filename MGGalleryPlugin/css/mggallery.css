@@ -1,13 +1,13 @@
 /**
  *	jQuery MG Gallery Plugin Style Sheet
  *
- *	Version 1.3.1
+ *	Version 1.3.3
  */
 /* -- Reset -- */
-div#galleryThumbnails img, div#galleryMainContainer img {
+#galleryThumbnails img, #galleryMainContainer img {
 	border: 0;
 }
-div#galleryThumbnails ul li {
+#galleryThumbnails ul li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -16,40 +16,40 @@ div#galleryThumbnails ul li {
 	outline: none;
 	}
 /* -- Thumbnail Set and Main Image Containers -- */
-div#galleryMainContainer {
+#galleryMainContainer {
 	float: left;
 	position: relative;
 }
-div#galleryMainContainer {
+#galleryMainContainer {
 	position: relative;
 }
-div#galleryMainContainer div.next {
+#galleryMainContainer .next {
 /* This is about the most important CSS block, do not change. It keeps the current and prior images superimposed on each other.*/
 	position: absolute;
 	top: 35px;
 	left: 0;
 }
-div#galleryThumbnails {
+#galleryThumbnails {
 /* Alter #galleryMainContainer and #galleryThumbnails width attribute to suit your page and thumbnail width. */
 	width: 310px;
 	float: left;
 }
-div#galleryMainContainer,
-div#galleryMainContainer div.current,
-div#galleryMainContainer div.next {
+#galleryMainContainer,
+#galleryMainContainer .current,
+#galleryMainContainer .next {
 	width: 610px;
 }
-div#galleryMainContainer div.currentImage img {
+#galleryMainContainer .currentImage img {
 	cursor: pointer;
 }
 /* -- Current Image and Slideshow Controls -- */
-div#galleryMainContainer div.currentImage img{
+#galleryMainContainer .currentImage img{
 	display: block; 			/* Ok, this 'display: block;' is important, too, but otherwise, feel free to change the current image, title or meta CSS blocks. */
 	margin: 0 auto 10px auto;
 	padding: 10px;				/* The padding and background-color give the current image a frame, feel free to change. */
 	background-color: #EFEFEF;
 }
-div#galleryMainContainer div.currentTitle {
+#galleryMainContainer .currentTitle {
 	line-height: 18px;
 	font-size: 18px;
 	font-weight: bold;
@@ -58,59 +58,59 @@ div#galleryMainContainer div.currentTitle {
 	text-align: center;
 	margin-bottom: 5px;
 }
-div#galleryMainContainer div.currentMeta {
+#galleryMainContainer .currentMeta {
 	line-height: 18px;
 	font-size: 14px;
 	padding: 5px;
 	text-align: center;
 }
-div.slideShowControls {
+.slideShowControls {
 	margin: 5px 0 10px;
 	position: relative;
 	height: 20px;
 }
-div.slideShowControls span.play, div.slideShowControls span.pause {
+.slideShowControls .play, .slideShowControls .pause {
 	cursor: pointer;
 	position: absolute;
 	top: 0;
 	left: 30px;
 }
 /* -- Thumbnails and Thumbnail Page Controls -- */
-div#galleryThumbnails ul  div.centerThumbs {
+#galleryThumbnails ul  .centerThumbs {
 	width: 220px;
 	margin: 0 auto;
 }
-div#galleryThumbnails li {
+#galleryThumbnails li {
 	float: left;
 }
-div#galleryThumbnails li img {
+#galleryThumbnails li img {
 	margin: 5px;
 	border: 1px solid #000;
 }
-div.thumbPageControls {
+.thumbPageControls {
 	margin: 5px;
 	position: relative;
 	height: 20px;
 }
-div.thumbPageControls span.first {
+.thumbPageControls .first {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: pointer;
 }
-div.thumbPageControls span.prev {
+.thumbPageControls .prev {
 	position: absolute;
 	top: 0;
 	left: 30px;
 	cursor: pointer;
 }
-div.thumbPageControls span.next {
+.thumbPageControls .next {
 	position: absolute;
 	top: 0;
 	right: 30px;
 	cursor: pointer;
 }
-div.thumbPageControls span.last {
+.thumbPageControls .last {
 	position: absolute;
 	top: 0;
 	right: 0;

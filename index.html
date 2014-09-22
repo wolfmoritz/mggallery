@@ -107,7 +107,7 @@
 	<div id="breadcrumb"><a href="http://www.wolfmoritz.com/jquery/mg-gallery-jquery-plugin">wolfmoritz.com</a> &gt; Plugin Documentation</div>
 	<div id="content">
 
-		<h1>MG Gallery jQuery Plugin v1.3.2</h1>
+		<h1>MG Gallery jQuery Plugin v1.3.3</h1>
 
 		<p>There are many nice jQuery image gallery plugins available today. Yet I was still looking for the one with the right combination of features, specifically one that supported a generous caption text/HTML block for each image. The MG Gallery jQuery Plugin has just that and:</p>
 		<ul>
@@ -135,10 +135,12 @@
 		<p>In your page header, reference jQuery 1.7.0+ (supplied with the download) or link to <a href="https://developers.google.com/speed/libraries/devguide">Google's jQuery API</a> (a better option). Also reference the MG Gallery plugin file, either the regular <var>jquery.mggallery.js</var> or the minfied <var>jquery.mggallery.min.js</var>. Don't forget the MG Gallery stylesheet, <var>mggallery.css</var>.</p>
 		<code>
 			&lt;head&gt;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;link type="text/css" rel="stylesheet" href="css/mggallery.css" /&gt;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery-1.7.1.min.js"&gt;&lt;/script&gt;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery.mggallery.js"&gt;&lt;/script&gt;<br>
-			&lt;/head&gt;
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;link type="text/css" rel="stylesheet" href="css/mggallery.css"&gt;<br>
+			&lt;/head&gt;<br>
+			<br>
+			( In footer )<br>
+			&lt;script type="text/javascript" src="js/jquery-1.7.1.min.js"&gt;&lt;/script&gt;<br>
+			&lt;script type="text/javascript" src="js/jquery.mggallery.js"&gt;&lt;/script&gt;<br>
 		</code>
 
 		<h3>Define Page Elements</h3>
@@ -151,7 +153,7 @@
 			&lt;div id="galleryThumbnails"&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="path_to_full_sized_image.ext" title="Your Image Title"&gt;&lt;img src="path_to_thumbnail_image.ext" /&gt;&lt;/a&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="path_to_full_sized_image.ext" title="Your Image Title"&gt;&lt;img src="path_to_thumbnail_image.ext"&gt;&lt;/a&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="thumbnailMeta"&gt;Optional div: Any text or HTML you want to appear under the image.&lt;/div&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
@@ -170,12 +172,10 @@
 		</ul>
 
 		<h3>Initialize the Gallery</h3>
-		<p>In your header, reference the MG Gallery plugin <dfn>$('#galleryThumbnails').mggallery();</dfn> inside of the standard jQuery ready handler.</p>
+		<p>In your footer below your jQuery and MG Gallery file references initialize the plugin.</p>
 		<code>
 			&lt;script type="text/javascript"&gt;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function () {<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#galleryThumbnails').mggallery();<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;$('#galleryThumbnails').mggallery();<br>
 			&lt;/script&gt;<br>
 		</code>
 		<p>That's it!</p>
@@ -219,25 +219,25 @@
 				<td>thumbPageLimit</td><td>8</td><td>Number of thumbnails to display at a time before adding thumbnail pagination.</td>
 			</tr>
 			<tr>
-				<td>thumbNavFirst</td><td>&amp;#171;</td><td>(&#171;) Go to "First" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>thumbNavFirst</td><td>&amp;#171;</td><td>(&#171;) Go to "First" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr class="alt">
 				<td>thumbNavFirstTitle</td><td>First</td><td>Use for alternate title text for thumbPage navigation controls.</td>
 			</tr>
 			<tr>
-				<td>thumbNavPrev</td><td>&amp;lt;</td><td>(&lt;) Go to "Previous" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>thumbNavPrev</td><td>&amp;lt;</td><td>(&lt;) Go to "Previous" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr class="alt">
 				<td>thumbNavPrevTitle</td><td>Previous</td><td>Use for alternate title text for thumbPage navigation controls.</td>
 			</tr>
 			<tr>
-				<td>thumbNavNext</td><td>&amp;gt;</td><td>(&gt;) Go to "Next" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>thumbNavNext</td><td>&amp;gt;</td><td>(&gt;) Go to "Next" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr class="alt">
 				<td>thumbNavNextTitle</td><td>Next</td><td>Use for alternate title text for thumbPage navigation controls.</td>
 			</tr>
 			<tr>
-				<td>thumbNavLast</td><td>&amp;#187</td><td>(&#187;) Go to "Last" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>thumbNavLast</td><td>&amp;#187</td><td>(&#187;) Go to "Last" thumbnail pagination set label. You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr class="alt">
 				<td>thumbNavLastTitle</td><td>Last</td><td>Use for alternate title text for thumbPage navigation controls.</td>
@@ -246,13 +246,13 @@
 				<td>slideShowInterval</td><td>3000</td><td>Slide show interval in milliseconds. Set to 0 to disable the slide show and controls.</td>
 			</tr>
 			<tr class="alt">
-				<td>slideShowPlay</td><td>Play</td><td>"Play" slide show label.You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>slideShowPlay</td><td>Play</td><td>"Play" slide show label.You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr>
 				<td>slideShowPlayTitle</td><td>Play Slideshow</td><td>Use for alternate title text for slideshow navigation controls.</td>
 			</tr>
 			<tr class="alt">
-				<td>slideShowPause</td><td>Pause</td><td>"Pause" slide show label.You can also pass in an image tag as '&lt;img src="path/image.ext" /&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
+				<td>slideShowPause</td><td>Pause</td><td>"Pause" slide show label.You can also pass in an image tag as '&lt;img src="path/image.ext"&gt;', or enter '&amp;nbsp;' and use CSS for the image.</td>
 			</tr>
 			<tr>
 				<td>slideShowPauseTitle</td><td>Pause Slideshow</td><td>Use for alternate title text for slideshow navigation controls.</td>
