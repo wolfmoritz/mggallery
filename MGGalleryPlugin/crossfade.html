@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="google-site-verification" content="ilKpSg25DPmF-rOHwP9c-3cbA408Y_Z_2or2NhPm4l4" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="google-site-verification" content="ilKpSg25DPmF-rOHwP9c-3cbA408Y_Z_2or2NhPm4l4">
 	<title>jQuery MG Gallery Plugin: Crossfade</title>
-	<link href="css/mggallery.css" rel="stylesheet" type="text/css" />
-	<!-- Requires jQuery 1.7+. You may use the included jQuery 1.7.1 file -->
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<!-- Or better yet reference the Google jQuery API:
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	-->
-	<script type="text/javascript" src="js/jquery.mggallery.js"></script>
-	<script type="text/javascript">
-		// Standard jQuery ready handler.
-		$(document).ready(function () {
-			// Accepting the defaults except for button controls, this is all it takes to invoke the MG Gallery.
-			$('div#galleryThumbnails').mggallery({
-				thumbNavFirst: '<img src="images/first.png" />',
-				thumbNavPrev: '<img src="images/prev.png" />',
-				thumbNavNext: '<img src="images/next.png" />',
-				thumbNavLast: '<img src="images/end.png" />',
-				slideShowPlay: '<img src="images/play.png" />',
-				slideShowPause: '<img src="images/pause.png" />'
-			});
-		});
-	</script>
-	<!--
-		This line below is optional. It hides the gallery thumbnails div on page load so that all thumbnails can fade in together after the page is fully loaded.
-		If your visitor does not have JavaScript enabled, the thumbnails will still display.
-	-->
-	<script type="text/javascript">document.write('<sty'+'le type="text\/css">#galleryThumbnails {display:none;}<\/sty'+'le>');</script>
 
+	<!-- Include MG Gallery CSS File -->
+	<link href="css/mggallery.css" rel="stylesheet" type="text/css">
+
+	<!--
+		This JavaScript line below is optional. It hides the gallery thumbnails div on page load so that all thumbnails can fade in together after the page is fully loaded. If your visitor does not have JavaScript enabled, the thumbnails will still display.		
+	-->
+	<script type="text/javascript">document.write('<style type="text\/css">#galleryThumbnails {display:none;}<\/style>');</script>
+
+	<!-- Local styles just for this demonstration page -->
 	<style type="text/css">
 		html, body {
 			background-color: #E0DFD9;
@@ -61,25 +44,12 @@
 			margin: 10px;
 			font-size: 70%;
 		}
-		#wmlink {
-			margin: 20px;
-			text-align: center;
+		/* Forcing the unordered list to left align for the example */
+		#galleryMainContainer .currentMeta ul {
+			text-align: left;
 		}
 	</style>
-	<script type="text/javascript">
-		// <!-- Google Analytics -->
-		// Nothing to see here, just my Google tracking stuff.
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-21182600-1']);
-	  _gaq.push(['_trackPageview']);
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
 </head>
 <body>
 	<div id="breadcrumb"><a href="http://www.wolfmoritz.com/jquery/mg-gallery-jquery-plugin">wolfmoritz.com</a> &gt; <a href="../index.html">Plugin Documentation</a> &gt; Crossfade Example</div>
@@ -94,16 +64,16 @@
 				<ul>
 					<!-- Explanation of a prototypical entry.
 					<li>
-						<a href="path_to_the_full_sized_image.ext" title="Your Image Title (Appears as the current image title)"><img src="path_to_thumbnail_image.ext" /></a>
+						<a href="path_to_the_full_sized_image.ext" title="Your Image Title (Appears as the current image title)"><img src="path_to_thumbnail_image.ext"></a>
 						<div class="thumbnailMeta">Optional div: Any text or html you want to appear under the image. You can change the class name of this div and supply it as a parameter - thumbnailMetaDivClass.</div>
 					</li>
 					-->
 					<li>
-						<a href="images/plumeria_002.jpg" title="Your Title"><img src="images/plumeria_002_thumb.jpg" /></a>
+						<a href="images/plumeria_002.jpg" title="Your Title"><img src="images/plumeria_002_thumb.jpg"></a>
 						<div class="thumbnailMeta">Click on the main image to load the next image.</div>
 					</li>
 					<li>
-						<a href="images/plumeria_004.jpg" title="Plumeria"><img src="images/plumeria_004_thumb.jpg" /></a>
+						<a href="images/plumeria_004.jpg" title="Plumeria"><img src="images/plumeria_004_thumb.jpg"></a>
 						<div class="thumbnailMeta">
 							<p>Any HTML or text can be used in the thumbnailMeta div. If no description is provided, this thumbnailMeta div is hidden.</p>
 							<p>You can include a lot of text, or HTML:</p>
@@ -111,19 +81,20 @@
 						</div>
 					</li>
 					<li>
-						<a href="images/plumeria_005.jpg" title="Your Image Title"><img src="images/plumeria_005_thumb.jpg" /></a>
+						<a href="images/plumeria_005.jpg" title="Your Image Title"><img src="images/plumeria_005_thumb.jpg"></a>
 						<div class="thumbnailMeta">By the way, the Plumeria are not native to Hawaii. It is native to tropical and subtropical America. Plumeria are used to make leis. The flower is named after 17th century french botanist Charles Plumier.</div>
 					</li>
 					<li>
-						<a href="images/plumeria_006.jpg" title="Yes, More Plumeria"><img src="images/plumeria_006_thumb.jpg" /></a>
+						<a href="images/plumeria_006.jpg" title="Yes, More Plumeria"><img src="images/plumeria_006_thumb.jpg"></a>
 						<div class="thumbnailMeta">Try using the backbutton to navigate back through the images without leaving this page. You can choose to enable deep links to a specific image in your gallery, as well as to enable back/forward browser button navigation through the viewed images.</div>
 					</li>
 					<li>
-						<a href="images/plumeria_008.jpg" title="Any Title"><img src="images/plumeria_008_thumb.jpg" /></a>
+						<a href="images/plumeria_008.jpg" title="Any Title"><img src="images/plumeria_008_thumb.jpg"></a>
 						<div class="thumbnailMeta">Try the slide show by clicking the <b>Play</b> button above. You can choose to auto-start the slide show, and to also set the timing.</div>
 					</li>
 					<li>
-						<a href="images/plumeria_010.jpg"><img src="images/plumeria_010_thumb.jpg" /></a>
+						<!-- The title="" attribute is optional -->
+						<a href="images/plumeria_010.jpg"><img src="images/plumeria_010_thumb.jpg"></a>
 						<div class="thumbnailMeta">This photo has no title (and the title div is therefore hidden). You can easily include additional HTML, such as this list of links:
 							<ul>
 								<li><a href="http://en.wikipedia.org/wiki/Plumeria" target="_blank">Wikipedia on Plumeria</a></li>
@@ -132,16 +103,16 @@
 						</div>
 					</li>
 					<li>
-						<a href="images/plumeria_012.jpg" title="The title and caption text are optional"><img src="images/plumeria_012_thumb.jpg" /></a>
+						<a href="images/plumeria_012.jpg" title="The title and caption text are optional"><img src="images/plumeria_012_thumb.jpg"></a>
 					</li>
 					<li>
-						<a href="images/plumeria_016.jpg" title="More Plumeria"><img src="images/plumeria_016_thumb.jpg" /></a>
+						<a href="images/plumeria_016.jpg" title="More Plumeria"><img src="images/plumeria_016_thumb.jpg"></a>
 					</li>
 					<li>
-						<a href="images/plumeria_023.jpg" title="More Plumeria"><img src="images/plumeria_023_thumb.jpg" /></a>
+						<a href="images/plumeria_023.jpg" title="More Plumeria"><img src="images/plumeria_023_thumb.jpg"></a>
 					</li>
 					<li>
-						<a href="images/plumeria_034.jpg" title="Last Image"><img src="images/plumeria_034_thumb.jpg" /></a>
+						<a href="images/plumeria_034.jpg" title="Last Image"><img src="images/plumeria_034_thumb.jpg"></a>
 						<div class="thumbnailMeta">Clicking on the last image starts the sequence from image one.</div>
 					</li>
 				</ul>
@@ -150,11 +121,46 @@
 			<!-- This empty #galleryMainContainer div will have the current image, title and meta text appended by the plugin on page load. You can move this div and style it as needed. -->
 			<div id="galleryMainContainer"></div><!-- End #galleryMainContainer -->
 			<div class="clear"></div>
+
 	</div>
-	<div id="wmlink"><a href="http://www.wolfmoritz.com/jquery/mg-gallery-jquery-plugin">wolfmoritz.com</a></div>
+
+	<!-- Put JS files in footer -->
+	<!-- Requires jQuery 1.7+. You may use the included jQuery 1.7.1 file -->
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<!-- Or better yet reference the Google jQuery API:
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	-->
+
+	<!-- Include the MG Gallery JS File, use the minified version for production -->
+	<script type="text/javascript" src="js/jquery.mggallery.js"></script>
+	<script type="text/javascript">
+		// Accepting the defaults except for button controls, this is all it takes to invoke the MG Gallery.
+		$('#galleryThumbnails').mggallery({
+			thumbNavFirst: '<img src="images/first.png">',
+			thumbNavPrev: '<img src="images/prev.png">',
+			thumbNavNext: '<img src="images/next.png">',
+			thumbNavLast: '<img src="images/end.png">',
+			slideShowPlay: '<img src="images/play.png">',
+			slideShowPause: '<img src="images/pause.png">'
+		});
+	</script>
+
+	<!-- Nothing to see below this line, just tracking stuff. -->
+	<script type="text/javascript">
+		// <!-- Google Analytics -->
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-21182600-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 	<script type="text/javascript">
 	// <!-- Get Clicky -->
-	// Nothing to see here, just more tracking stuff.
 	var clicky = { log: function(){ return; }, goal: function(){ return; }};
 	var clicky_site_id = 66381280;
 	(function() {
@@ -166,7 +172,7 @@
 	})();
 
 	</script>
-<a title="Web Analytics" href="http://getclicky.com/66381280"></a>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66381280ns.gif" /></p></noscript>
+	<a title="Web Analytics" href="http://getclicky.com/66381280"></a>
+	<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66381280ns.gif"></p></noscript>
 </body>
 </html>
