@@ -721,5 +721,268 @@ pre {
   position: relative;
   border-color: #4078c0;
 }
-</style><title>README</title></head><body><article class="markdown-body"><p><a href="http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/">http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/</a></p>
+</style><title>README</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-mg-gallery-jquery-plugin" class="anchor" href="#mg-gallery-jquery-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MG Gallery jQuery Plugin</h1>
+
+<p>The MG Gallery jQuery Plugin is a full featured image gallery that includes:</p>
+
+<ul>
+<li>Navigable thumbnails.</li>
+<li>A nice crossfade image transition, or a sequential swap transition.</li>
+<li>Optional slideshow with controls as well as autoplay.</li>
+<li>Built in thumbnail opacity mouse over animation.</li>
+<li>Thumbnail pagination if you have a lot of images.</li>
+<li>Deep linking to a specific image within the gallery.</li>
+<li>Back Button and Forward Button enabled for images.</li>
+<li>Minimal CSS or HTML required.</li>
+<li>Flexible thumbnail and image page arrangement.</li>
+<li>All images gracefully fade in on page load.</li>
+<li>The thumbnails degrade nicely if the client browser has JavaScript disabled.</li>
+<li>Image preloader for more responsive animation.</li>
+<li>An optional image title that does not cover or obscure the current image (a pet peeve of mine).</li>
+<li>And unlimited optional text/HTML below the current image for more verbose captions.</li>
+</ul>
+
+<h2>
+<a id="user-content-view-demo" class="anchor" href="#view-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>View Demo</h2>
+
+<ul>
+<li><a href="http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/crossfade.html">Default Crossfade Installation</a></li>
+<li><a href="http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/swap.html">Swap Transition Installation With Thumbnail Strip at Top</a></li>
+</ul>
+
+<h2>
+<a id="user-content-get-the-plugin" class="anchor" href="#get-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get The Plugin!</h2>
+
+<p>On GitHub: <a href="https://github.com/wolfmoritz/mggallery">https://github.com/wolfmoritz/mggallery</a></p>
+
+<h2>
+<a id="user-content-how-to-use-mg-gallery" class="anchor" href="#how-to-use-mg-gallery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use MG Gallery</h2>
+
+<h3>
+<a id="user-content-load-the-files" class="anchor" href="#load-the-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Load The Files</h3>
+
+<p>In your page header link to the MG Gallery CSS file. In your page footer reference jQuery 1.7.0+ (supplied with the download) or link to Google's jQuery API (a better option). Also reference the MG Gallery plugin file in the footer, either the regular jquery.mggallery.js or the minfied jquery.mggallery.min.js.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">link</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/mggallery.css<span class="pl-pds">"</span></span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;
+
+<span class="pl-c">&lt;!-- In your footer --&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery-1.7.1.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery.mggallery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+<h3>
+<a id="user-content-define-page-elements" class="anchor" href="#define-page-elements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Define Page Elements</h3>
+
+<p>For the thumbnail gallery, the plugin expects:</p>
+
+<ul>
+<li>A div with an unordered list of thumbnail images, each wrapped in an anchor that links to the larger primary image.</li>
+<li>An empty div where the main (large) image, title and caption will appear.</li>
+</ul>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>galleryThumbnails<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">ul</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;
+            &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_full_sized_image.ext<span class="pl-pds">"</span></span> <span class="pl-e">title</span>=<span class="pl-s"><span class="pl-pds">"</span>Your Image Title<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>path_to_thumbnail_image.ext<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>thumbnailMeta<span class="pl-pds">"</span></span>&gt;Optional div: Any text or HTML you want to appear under the image.&lt;/<span class="pl-ent">div</span>&gt;
+        &lt;/<span class="pl-ent">li</span>&gt;
+    &lt;/<span class="pl-ent">ul</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;<span class="pl-c">&lt;!-- End #galleryThumbnails --&gt;</span>
+
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>galleryMainContainer<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;<span class="pl-c">&lt;!-- End #galleryMainContainer --&gt;</span></pre></div>
+
+<p>Notes:</p>
+
+<ul>
+<li>The unordered list, list items, anchor, and image HTML tags do not need any special classes. But the plugin expects this structure for the thumbnail list.</li>
+<li>The thumbnail anchor should link to the larger image.</li>
+<li>The thumbnail anchor title will be used as the title below the current image. This is optional, and if not supplied, the current image title div is hidden.</li>
+<li>You can optionally include a div with the class 'thumbnailMeta' as part of the thumbnail list item containing any text or HTML for the caption.</li>
+<li>The empty div with the ID 'galleryMainContainer' is required somewhere on the page, presumably after the thumbnail list. When the plugin is initialized, this div is filled with the current image, title and meta. You can use a different ID name and supply that as a option: <code>{mainImageDivContainerId: '#myid'}</code> (include the '#' in the parameter).</li>
+<li>You are welcome to use the supplied button images for the slideshow and thumbnail pagination controls.</li>
+</ul>
+
+<h3>
+<a id="user-content-initialize-the-gallery" class="anchor" href="#initialize-the-gallery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize the Gallery</h3>
+
+<p>In your footer below the jQuery and MG Gallery scipts, reference the MG Gallery plugin <code>$('#galleryThumbnails').mggallery();</code>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#galleryThumbnails<span class="pl-pds">'</span></span>).<span class="pl-en">mggallery</span>();
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
+
+<p>That's it!</p>
+
+<p>Much of the supplied CSS is editable, and the few critical elements have been commented as such. My focus was not on ultra-chic styling, you can do that, but to provide a functional JS gallery.</p>
+
+<h3>
+<a id="user-content-options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<p>Of course there has to be options, and there are enough to customize the MG Gallery. You supply the options you wish to change as a standard JSON Object (see below for an example of what that means). First, here are the available options. If you supply your own classes or ID's, include the dot . or pound # in the name.</p>
+
+<table>
+<thead>
+<tr>
+<th><em>Option Name</em></th>
+<th align="center"><em>Default Value</em></th>
+<th><em>Description</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thumbnailMetaDivClass</td>
+<td align="center"><code>.thumbnailMeta</code></td>
+<td>This div class wraps the optional thumbnail caption text/HTML. (The caption title comes from the anchor.)</td>
+</tr>
+<tr>
+<td>thumbnailCurrentItemClass</td>
+<td align="center"><code>.currentthumb</code></td>
+<td>When a thumbnail becomes the current image, the thumbnail list item has this class set for your styling needs.</td>
+</tr>
+<tr>
+<td>mainImageDivContainerId</td>
+<td align="center"><code>#galleryMainContainer</code></td>
+<td>This is the empty div that will contain the current image, title, and caption. If you change this option, be sure to update the CSS file.</td>
+</tr>
+<tr>
+<td>currentImageDivClass</td>
+<td align="center"><code>.currentImage</code></td>
+<td>This wraps the currently displayed image. If you change this option, be sure to update the CSS file.</td>
+</tr>
+<tr>
+<td>currentTitleDivClass</td>
+<td align="center"><code>.currentTitle</code></td>
+<td>This wraps the currently displayed title. If you change this option, be sure to update the CSS file.</td>
+</tr>
+<tr>
+<td>currentMetaDivClass</td>
+<td align="center"><code>.currentMeta</code></td>
+<td>This wraps the currently displayed caption. If you change this option, be sure to update the CSS file.</td>
+</tr>
+<tr>
+<td>animationSpeed</td>
+<td align="center"><code>1000</code></td>
+<td>The animation speed for the main image transition and the thumbnail hover over opacity change. Accepts 'slow', 'fast', or an integer for milliseconds.</td>
+</tr>
+<tr>
+<td>exchangeType</td>
+<td align="center"><code>crossfade</code></td>
+<td>Options include 'crossfade' or 'swap'.</td>
+</tr>
+<tr>
+<td>thumbDefaultOpacity</td>
+<td align="center"><code>.5</code></td>
+<td>Sets the thumbnail opacity on page load. Accepts between 0 (can't see it) to 1 (normal display).</td>
+</tr>
+<tr>
+<td>thumbPageLimit</td>
+<td align="center"><code>8</code></td>
+<td>Number of thumbnails to display at a time before adding thumbnail pagination.</td>
+</tr>
+<tr>
+<td>thumbNavFirst</td>
+<td align="center"><code>&amp;#171;</code></td>
+<td>(«) Go to "First" thumbnail pagination set label. You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>thumbNavFirstTitle</td>
+<td align="center"><code>First</code></td>
+<td>Use for alternate title text for thumbPage navigation controls.</td>
+</tr>
+<tr>
+<td>thumbNavPrev</td>
+<td align="center"><code>&amp;lt;</code></td>
+<td>(&lt;) Go to "Previous" thumbnail pagination set label. You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>thumbNavPrevTitle</td>
+<td align="center"><code>Previous</code></td>
+<td>Use for alternate title text for thumbPage navigation controls.</td>
+</tr>
+<tr>
+<td>thumbNavNext</td>
+<td align="center"><code>&amp;gt;</code></td>
+<td>(&gt;) Go to "Next" thumbnail pagination set label. You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>thumbNavNextTitle</td>
+<td align="center"><code>Next</code></td>
+<td>Use for alternate title text for thumbPage navigation controls.</td>
+</tr>
+<tr>
+<td>thumbNavLast</td>
+<td align="center"><code>&amp;#187</code></td>
+<td>(») Go to "Last" thumbnail pagination set label. You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>thumbNavLastTitle</td>
+<td align="center"><code>Last</code></td>
+<td>Use for alternate title text for thumbPage navigation controls.</td>
+</tr>
+<tr>
+<td>slideShowInterval</td>
+<td align="center"><code>3000</code></td>
+<td>Slide show interval in milliseconds. Set to 0 to disable the slide show and controls.</td>
+</tr>
+<tr>
+<td>slideShowPlay</td>
+<td align="center"><code>Play</code></td>
+<td>"Play" slide show label.You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>slideShowPlayTitle</td>
+<td align="center"><code>Play</code></td>
+<td>Slideshow Use for alternate title text for slideshow navigation controls.</td>
+</tr>
+<tr>
+<td>slideShowPause</td>
+<td align="center"><code>Pause</code></td>
+<td>"Pause" slide show label.You can also pass in an image tag as <code>'&lt;img src="path/image.ext"&gt;'</code>, or enter <code>'&amp;nbsp;'</code> and use CSS for the image.</td>
+</tr>
+<tr>
+<td>slideShowPauseTitle</td>
+<td align="center"><code>Pause</code></td>
+<td>Slideshow Use for alternate title text for slideshow navigation controls.</td>
+</tr>
+<tr>
+<td>slideShowAutoStart</td>
+<td align="center"><code>false</code></td>
+<td>Whether to start the slide show on page load, or let the user choose to activate.</td>
+</tr>
+<tr>
+<td>enableDeepLinks</td>
+<td align="center"><code>true</code></td>
+<td>Appends hash to URL for the current image to allow direct links.</td>
+</tr>
+<tr>
+<td>enableBackButton</td>
+<td align="center"><code>true</code></td>
+<td>Allows users to browse prior images using the back button. Only works if enableDeepLinks is true.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Of the two transition types, the default crossfade superimposes the next image over the prior and simultaneously fades one in and the other out. The transition type swap sequentially first fades out the current image before loading and fading in the next image.</p>
+
+<h3>
+<a id="user-content-define-an-option-example" class="anchor" href="#define-an-option-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Define an Option Example</h3>
+
+<p>If you want to change one or more options, you don't need to specify all options, just the ones you want to change. Supply options as a JavaScript object.</p>
+
+<div class="highlight highlight-source-js"><pre>{animationSpeed<span class="pl-k">:</span> <span class="pl-c1">500</span>, exchangeType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>swap<span class="pl-pds">'</span></span>, thumbDefaultOpacity<span class="pl-k">:</span> <span class="pl-c1">.25</span>}</pre></div>
+
+<p>And a complete example JavaScript with custom options.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Here, we pass in a few options. Only pass in the options you wish to change.</span>
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#galleryThumbnails<span class="pl-pds">'</span></span>).<span class="pl-en">mggallery</span>({
+    animationSpeed<span class="pl-k">:</span> <span class="pl-c1">500</span>,
+    exchangeType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>swap<span class="pl-pds">'</span></span>,
+    thumbDefaultOpacity<span class="pl-k">:</span> <span class="pl-c1">.25</span>
+});</pre></div>
+
+<p>Remember, the last custom option does not have an ending comma!</p>
+
+<p>Good luck!</p>
 </article></body></html>
