@@ -18,8 +18,8 @@ The MG Gallery jQuery Plugin is a full featured image gallery that includes:
 * And unlimited optional text/HTML below the current image for more verbose captions.
 
 ## View Demo
-* [Default Crossfade Installation](http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/crossfade.html)
-* [Swap Transition Installation With Thumbnail Strip at Top](http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/swap.html)
+* [Default Crossfade Installation](http://wolfmoritz.github.io/mggallery/crossfade.html)
+* [Swap Transition Installation With Thumbnail Strip at Top](http://wolfmoritz.github.io/mggallery/swap.html)
 
 ## Get The Plugin!
 On GitHub: <https://github.com/wolfmoritz/mggallery>
