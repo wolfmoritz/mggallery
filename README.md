@@ -21,12 +21,14 @@ The MG Gallery jQuery Plugin is a full featured image gallery that includes:
 * [Default Crossfade Installation](http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/crossfade.html)
 * [Swap Transition Installation With Thumbnail Strip at Top](http://www.wolfmoritz.com/examples/jquery/mggallery/MGGalleryPlugin/swap.html)
 
+## Get The Plugin!
+On GitHub: <https://github.com/wolfmoritz/mggallery>
 
 ## How to Use MG Gallery
 
 ### Load The Files
 In your page header link to the MG Gallery CSS file. In your page footer reference jQuery 1.7.0+ (supplied with the download) or link to Google's jQuery API (a better option). Also reference the MG Gallery plugin file in the footer, either the regular jquery.mggallery.js or the minfied jquery.mggallery.min.js.
-```
+```html
 <head>
     <link type="text/css" rel="stylesheet" href="css/mggallery.css">
 </head>
@@ -42,7 +44,7 @@ For the thumbnail gallery, the plugin expects:
 * A div with an unordered list of thumbnail images, each wrapped in an anchor that links to the larger primary image.
 * An empty div where the main (large) image, title and caption will appear.
 
-```
+```html
 <div id="galleryThumbnails">
     <ul>
         <li>
@@ -67,7 +69,7 @@ Notes:
 
 ### Initialize the Gallery
 In your footer below the jQuery and MG Gallery scipts, reference the MG Gallery plugin `$('#galleryThumbnails').mggallery();`.
-```
+```javascript
 <script type="text/javascript">
     $('#galleryThumbnails').mggallery();
 </script>
@@ -114,13 +116,13 @@ Of the two transition types, the default crossfade superimposes the next image o
 ### Define an Option Example
 If you want to change one or more options, you don't need to specify all options, just the ones you want to change. Supply options as a JavaScript object.
 
-```
+```javascript
 {animationSpeed: 500, exchangeType: 'swap', thumbDefaultOpacity: .25}
 ```
 
 And a complete example JavaScript with custom options.
 
-```
+```javascript
 // Here, we pass in a few options. Only pass in the options you wish to change.
 $('#galleryThumbnails').mggallery({
     animationSpeed: 500,
@@ -130,6 +132,5 @@ $('#galleryThumbnails').mggallery({
 ```
 
 Remember, the last custom option does not have an ending comma!
-
 
 Good luck!
