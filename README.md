@@ -68,7 +68,7 @@ Notes:
 
 
 ### Initialize the Gallery
-In your footer below the jQuery and MG Gallery scipts, reference the MG Gallery plugin `$('#galleryThumbnails').mggallery();`.
+In your footer below the jQuery and MG Gallery scipts, reference the MG Gallery plugin.
 ```javascript
 <script type="text/javascript">
     $('#galleryThumbnails').mggallery();
